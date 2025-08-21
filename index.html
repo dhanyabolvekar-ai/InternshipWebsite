@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #1f4c5e;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 45px;
+    }
+
+    .logo img {
+      height: 60px; 
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    button {
+      background-color: #f01f5d;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-left: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Container for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hide the dropdown content by default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: #1f4c5e;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+/* Show dropdown when hovering on parent */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* header end */
+
+/* Base button */
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  border: 2px solid transparent;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Sliding background effect */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* Primary (blue background, white text → hover slides white in) */
+.btn-primary {
+  background-color: #1f4c5e;
+  color: #fff;
+  border-color: #1f4c5e;
+}
+.btn-primary::before {
+  background: #fff;
+}
+.btn-primary:hover {
+  color: #1f4c5e;
+}
+.btn-primary:hover::before {
+  transform: scaleX(1);
+}
+
+/* Outline (white background, blue border/text → hover slides blue in) */
+.btn-outline {
+  background-color: #fff;
+  color: #1f4c5e;
+  border-color: #1f4c5e;
+}
+.btn-outline::before {
+  background: #1f4c5e;
+}
+.btn-outline:hover {
+  color: #fff;
+}
+.btn-outline:hover::before {
+  transform: scaleX(1);
+}
+
+/* Accent (pink background, white text → hover slides white in) */
+.btn-accent {
+  background-color: #f01f5d;
+  color: #fff;
+  border-color: #f01f5d;
+}
+.btn-accent::before {
+  background: #fff;
+}
+.btn-accent:hover {
+  color: #f01f5d;
+}
+.btn-accent:hover::before {
+  transform: scaleX(1);
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Auto-assign delays based on class
+    document.querySelectorAll('.slide-left').forEach(el => {
+      el.setAttribute('data-aos-delay', '0');
+    });
+    document.querySelectorAll('.slide-right').forEach(el => {
+      el.setAttribute('data-aos-delay', '300');
+    });
+    document.querySelectorAll('.slide-bottom').forEach(el => {
+      el.setAttribute('data-aos-delay', '500');
+    });
+
+    // Initialize AOS
+    AOS.init({
+      duration: 800, // animation speed
+      once: true     // run animation only once
+    });
+  </script>
+
+
+  <header>
+    <div class="logo">
+      <img src="Layer 10.png" alt="AH Logo" style="width: 80px; height: 50px;">
+    </div>
+    <nav>
+      <a href="#about">About</a>
+
+      <div class="dropdown">
+  <a href="#services">Services ▾</a>
+  <div class="dropdown-content">
+    <a href="#executive coaching">Executive Coaching</a>
+    <a href="#hr transformation">HR Transformation</a>
+    <a href="#leadership development">Leadership Development</a>
+    <a href="#career development">Career Development</a>
+  </div>
+</div>
+
+      <a href="#testimonials">Testimonials</a>
+      <a href="#mybook">My Book</a>
+      <a href="#Contact">
+      <button class="btn btn-accent">Get in Touch</button>
+      </a>
+    </nav>
+  </header>
+  
+<!--starting-->
+<section style="display: flex; align-items: center; justify-content: space-between; padding: 60px; padding-top: 40px; background-color: #f9f9f9; flex-wrap: wrap;">  
+  <!-- Left Content -->
+  <div style="flex: 1.5; min-width: 250px; max-width: 800px;">
+    <div style="padding: 20px;">
+      <img src="Layer 11.png" alt="AH Consulting Logo" style="height: 130px; margin-bottom: 20px;">
+      <p style="color: #1f4c5e; font-size: 13px; letter-spacing: 1px; margin-bottom: 15px;">
+        <b>TRANSFORMATIVE TALKS · IMPACTFUL WORKSHOPS · STRATEGIC COACHING</b>
+      </p>
+      <h1 style="font-size: 43px; font-weight: 400; margin: 0 0 20px 0; line-height: 1.2;">
+        Unlock <b>Leadership Excellence</b> &<br>
+        Elevate <b>Team Performance</b>, Today.
+      </h1>
+      <p style="font-size: 14px; color: black; margin-top: 20px; margin-bottom: 25px; line-height: 1.5;">
+        Award-winning Author, Career Architect, and C-Suite Success Coach, Asad Husain,
+        empowers<br> you to unleash your potential and transform it into unparalleled success.
+      </p>
+    </div>
+    <div style="display: flex; gap: 15px; padding-right: 5px;">
+      <a href="#Contact">
+        <button class="btn btn-primary">GET IN TOUCH</button>
+      </a>
+      <a href="#about">
+      <button class="btn btn-outline">VIEW SERVICES</button>
+      </a>
+    </div>
+  </div>  
+  <!-- Right Image -->
+  <div style="flex: 1; min-width: 250px; display: flex; text-align: center; padding-left: 120px;">
+    <img src="asad.jpg" alt="Asad Husain" style="width: 700px; height: 500px;">
+  </div>
+</section>
+
+
+
+  <!--featured-->
+  <section style="text-align: center; padding: 20px 0; background-color: white;"  data-aos="fade-up">
+  <p style="color: #1f4c5e; margin-top: 2px; font-size: 12px; letter-spacing: 1px;"><b>AS FEATURED IN</b></p>
+  <br>
+  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; align-items: center; margin-top: 2px; margin-bottom: 15px;">
+    <img src="for.jpg" alt="Forbes" style="height: 40px; width: 100px;">
+    <img src="direct.jpg" alt="HR Director" style="height: 40px; width: 220px;">
+    <img src="fst.jpg" alt="Fast Company" style="height: 40px; width: 220px;">
+    <img src="hr.jpg"alt="HR" style="height: 40px; width: 100px;">
+  </div>
+</section>
+
+<!--challenges-->
+<section style="padding: 60px 20px; text-align: center; margin: auto; background-color: #fafafa;">
+  <p style="font-size: 12px; color: #1f4c5e; letter-spacing: 1px;">
+    <b>HOW CAN I HELP?</b>
+  </p>
+  <h2 style="font-size: 35px; font-weight: 500; color: #111; margin-top: 30px; margin-bottom: 50px;">
+    Do You or Your Team Face<br>
+    These <b>Critical Leadership Challenges?</b>
+  </h2>
+  
+  <!-- Columns -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+    <!--1 -->
+    <div style="flex: 1 1 300px; max-width: 300px;" data-aos="fade-right">
+      <div style="text-align: center; margin-top: 20px;">
+        <img src="icon1.png" alt="Icon 1" style="width: 110px; height: 100px;" />
+        <hr style="width: 130px; border: 2px solid #1f4c5e; margin: 15px auto;" />
+      </div>
+      <h3 style="color: #f01f5d; font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 20px;">
+        Transform Your<br>HR Department into<br>a Strategic Powerhouse.
+      </h3>
+      <ul style="text-align: left; color: #222; font-size: 14px; line-height: 1.8; padding-left: 20px;">
+        <li style="margin-bottom: 15px;">Your HR isn't aligned with business goals?</li>
+        <li style="margin-bottom: 15px;">Your team lacks the skills to perform at their best?</li>
+        <li style="margin-bottom: 15px;">You struggle to get clear insights on team performance?</li>
+      </ul>
+    </div>
+    <!-- 2 -->
+    <div style="flex: 1 1 300px; max-width: 300px;">
+      <div style="text-align: center; margin-top: 20px;">
+        <img src="icon2.png" alt="Icon 2" style="width: 110px; height: 100px;" />
+        <hr style="width: 130px; border: 2px solid #1f4c5e; margin: 15px auto;" />
+      </div>
+      <h3 style="color: #f01f5d; font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 20px;">
+        Empower Your<br>Leaders to Shape<br>the Future.
+      </h3>
+      <ul style="text-align: left; color: #222; font-size: 14px; line-height: 1.8; padding-left: 20px;">
+        <li style="margin-bottom: 15px;">You find decision-making in complex environments overwhelming?</li>
+        <li style="margin-bottom: 15px;">You lack visionary leaders to drive change?</li>
+        <li style="margin-bottom: 15px;">Your team struggles to adapt to future trends?</li>
+      </ul>
+    </div>
+    <!--3-->
+    <div style="flex: 1 1 300px; max-width: 300px;" data-aos="fade-left">
+      <div style="text-align: center; margin-top: 20px;">
+        <img src="icon3.png" alt="Icon 3" style="width: 110px; height: 100px;" />
+        <hr style="width: 130px; border: 2px solid #1f4c5e; margin: 15px auto;" />
+      </div>
+      <h3 style="color: #f01f5d; font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 20px;">
+        Unlock the<br>Full Potential of<br>Your Career.
+      </h3>
+      <ul style="text-align: left; color: #222; font-size: 14px; line-height: 1.8; padding-left: 20px;">
+        <li style="margin-bottom: 15px;">You're unclear on your career path?</li>
+        <li style="margin-bottom: 15px;">You struggle to build visibility and influence?</li>
+        <li style="margin-bottom: 15px;">You feel unfulfilled and disconnected from your goals?</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Button -->
+  <div style="margin-top: 20px; ">
+    <a href="#Contact">
+    <button class="btn btn-outline" >SIGN ME UP</button>
+    </a>
+  </div>
+</section>
+
+
+<!--Coaching-->
+<section id="executive coaching" style="background-color: #1f4c5e; color: white; padding: 60px 20px;">   
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 150px;">
+    
+    <!-- Left Column -->
+    <div style="flex: 1; min-width: 300px;" data-aos="fade-right">
+      <img src="coach.jpg" alt="Coach Image" style="width: 100%; max-width: 450px; display: block; margin: 0 auto;" />
+    </div>
+    
+    <!-- Right Column -->
+    <div style="flex: 1; min-width: 300px;" data-aos="fade-left">
+      <div style="padding: 20px;">
+      <p style="color: #f01f5d; font-size: 12px; letter-spacing: 1px; margin-bottom: 10px;"><b>WORK WITH ME</b></p>
+      <p style="font-size: 40px; margin-bottom: 15px;"><b>Executive Coaching:</b><br>Unlock Leadership Excellence</p>
+      <hr style="width: 120px; height: 3px; background-color: white; border: none; margin-left: 0;" />
+      <p style="color: #f01f5d; font-size: 23px; font-weight: bold; margin: 20px 0;">Personalized coaching for senior<br>leaders navigating complex challenges.</p>
+      
+      <ul style="list-style: disc; padding-left: 20px; line-height: 1.6; font-size: 16px;">
+        <li style="margin-bottom: 20px;"><strong>1:1 Executive Coaching:</strong> Tailored development plans and real-time decision-making support.</li>
+        <li style="margin-bottom: 20px;"><strong>360 Feedback Assessments:</strong> Build self-awareness and identify growth areas.</li>
+        <li style="margin-bottom: 10px;"><strong>Leadership Growth Frameworks:</strong> Define success metrics and accountability structures.</li>
+      </ul>
+      </div>
+      <a href="#Contact">
+      <button class="btn btn-outline" style="margin-top: 20px;">SIGN ME UP</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!--transformation-->
+<section id="hr transformation" style="padding: 60px 20px; background-color: #fafafa;">
+  <div style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 120px;">
+    
+    <!-- Left -->
+    <div style="flex: 1; min-width: 300px;" data-aos="fade-right">
+      <div style="padding: 20px;">
+      <p style="color: #f01f5d; font-size: 12px; margin-bottom: 10px; letter-spacing: 1px;"><b>WORK WITH ME</b></p>
+      <p style="font-size: 40px; margin-bottom: 10px;"><b>HR Transformation:</b><br>Build a Future-Ready<br>HR Function</p>
+      <hr style="width: 140px; height: 2px; background-color: #1f4c5e; border: none; margin-left: 0;" />
+      <p style="color: #f01f5d; font-size: 20.2px; margin-bottom: 20px;">
+        <b>We turn HR functions into strategic<br>powerhouses that drive business performance<br>and organizational excellence.</b>
+      </p>
+      <h3 style="font-size: 18px; font-weight: bold;">Executive Partnership</h3>
+      <ul style="padding-left: 20px; line-height: 1.6;">
+        <li>Strategic advisory for CPOs/CHROs to expand their impact</li>
+        <li>Build influential C-suite relationships</li>
+        <li>Navigate complex transformations</li>
+      </ul>
+      <h3 style="font-size: 18px; font-weight: bold; margin-top: 20px;">HR Strategy Design</h3>
+      <ul style="padding-left: 20px; line-height: 1.6;">
+        <li>Align HR capabilities with business priorities</li>
+        <li>Create scalable operating models</li>
+        <li>Develop future-ready talent frameworks</li>
+      </ul>
+      <h3 style="font-size: 18px; font-weight: bold; margin-top: 20px;">Performance Acceleration</h3>
+      <ul style="padding-left: 20px; line-height: 1.6;">
+        <li>Implement metrics that matter</li>
+        <li>Design high-impact HR programs</li>
+        <li>Build high-performing HR teams</li>
+      </ul>
+      <div style="background-color: #1f4c5e; color: white; padding: 20px; margin-top: 30px;">
+        <h4 style="color: #f01f5d; font-size: 16px; font-weight: bold; margin-top: 5px;">MEASURABLE IMPACT</h4>
+        <ul style="padding-left: 20px; line-height: 1.6; margin: 0;">
+          <li>Enhanced business performance through strategic HR initiatives</li>
+          <li>Improved talent outcomes and leadership pipeline</li>
+          <li>Increased HR team effectiveness and credibility</li>
+        </ul>
+      </div>  
+      </div>
+      <a href="#Contact">
+      <button class="btn btn-outline" style="margin-top: 25px;">SIGN ME UP</button>
+      </a>
+    </div>
+    <!-- Right -->
+    <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; margin-top: 150px;" data-aos="fade-left">
+      <img src="transformation.jpg" alt="HR Transformation Image" style="width: 100%; max-width: 450px;" />
+    </div>
+  </div>
+</section>
+
+
+  <!--leadership-->
+<section id="leadership development" style="background-color: #f01f5d; color: white; padding: 60px 20px;">   
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 120px;">
+    <!-- Left Column -->
+    <div style="flex: 1; min-width: 300px;" data-aos="fade-right">
+      <img src="leader.jpg" alt="Leader Image" style="height: 700px; width: auto; max-width: 100%; max-width: 600px; display: block; margin: 0 auto;" />
+    </div>
+    <!-- Right Column -->
+    <div style="flex: 1; min-width: 300px;" data-aos="fade-left">
+      <div style="padding: 20px;">
+      <p style="color: #1f4c5e; font-size: 12px; letter-spacing: 1px; margin-bottom: 10px;"><b>WORK WITH ME</b></p>
+      <p style="font-size: 36px; margin-bottom: 15px;"><b>Leadership Development:</b><br>Cultivate Future-Ready Leaders</p>
+      <hr style="width: 120px; height: 3px; background-color: white; border: none; margin-left: 0;" />
+      <p style="color: #1f4c5e; font-size: 22px; font-weight: bold; margin: 20px 0;">Comprehensive programs to develop<br>leadership capabilities across all levels.</p>
+      
+      <ul style="list-style: disc; padding-left: 20px; line-height: 1.6; font-size: 14px;">
+        <li style="margin-bottom: 20px;"><strong>Leadership Capabilities Buildings:</strong> Targeted skill development for current and future leaders.</li>
+        <li style="margin-bottom: 20px;"><strong>Action Learning Projects:</strong> Experiential programs to apply leadership skils.</li>
+        <li style="margin-bottom: 10px;"><strong>Succession Planning:</strong> Ensure readiness for critical leadership transitions.</li>
+      </ul>
+      </div>
+      <a href="#Contact">
+      <button class="btn btn-outline" style="margin-top: 20px;">SIGN ME UP</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!--career-->
+<section id="career development" style="padding: 60px 20px; background-color: #fafafa;">
+  <div style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 120px;">
+    <!-- Left -->
+    <div style="flex: 1; min-width: 300px;" data-aos="fade-right">
+      <div style="padding: 20px;">
+      <p style="color: #f01f5d; font-size: 12px; letter-spacing: 1px; margin-bottom: 10px;"><b>WORK WITH ME</b></p>
+      <p style="font-size: 40px; margin-bottom: 10px;"><b>Career Development:</b><br>Empower Individual<br>Growth</p>
+      <hr style="width: 140px; height: 2px; background-color: #1f4c5e; border: none; margin-left: 0;" />
+      <p style="color: #f01f5d; font-size: 22px; margin-bottom: 20px;">
+        <b>Program to help employees navigate<br>career growth while strengthening<br> organizational capability.</b>
+      </p>
+      <ul style="list-style: disc; padding-left: 20px; line-height: 1.6; font-size: 15px;">
+        <li style="margin-bottom: 20px;"><strong>Career Pathways:</strong> Design clear, actionable growth<br>frameworks.</li>
+        <li style="margin-bottom: 20px;"><strong>Personal Branding Workshops:</strong> Equi employees to enhance visibility and influence.</li>
+        <li style="margin-bottom: 10px;"><strong>Coaching Programs:</strong> Tailored plans to guide career<br>transitions.</li>
+      </ul>
+      </div>
+      <a href="#Contact">
+      <button class="btn btn-outline" style="margin-top: 25px;">SIGN ME UP</button>
+      </a>
+    </div>
+    <!-- Right -->
+    <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;" data-aos="fade-left">
+      <img src="career.jpg" alt="Career Development Image" style="width: 100%; max-width: 450px;" />
+    </div>
+  </div>
+</section>
+
+
+    <!--companies-->
+  <section style="text-align: center; padding: 20px 0; background-color: white;" data-aos="fade-down">
+  <p style=" font-size: 12px; letter-spacing: 1px; color: #1f4c5e; margin-top: 5px;"><b>COMPANIES WE'VE IMPACTED</b></p>
+  <br>
+  <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; align-items: center;">
+    <img src="Layer 26.png" alt="Mondelez International" style="height: 40px; width: 200px;  margin-bottom: 15px;">
+    <img src="Layer 28.png" alt="Transporeon" style="height: 45px; width: 220px; margin-top: 5px;">
+    <img src="Layer 29.png" alt="Scilife" style="height: 65px; width: 160px; margin-bottom: 15px;">
+    <img src="Layer 27.png"alt="Meezan Bank" style="height: 100px; width: 240px; margin-bottom: 15px;">
+  </div>
+</section>
+
+
+<!--client testimonials-->
+<section id="testimonials">
+  <section style="background-color: #1f4c5e; padding: 80px 250px; text-align: center;  position: relative;">
+    <h3 style="font-size: 14px; color: #f01f5d; letter-spacing: 1px; margin: 0;">
+      <b>SUCCESS STORIES</b>
+    </h3>
+    <h2 style="font-size: 42px; font-weight: 400; color: white; margin: 15px 0 60px;">
+      Client <strong style="font-weight: 700;">Testimonials</strong>
+    </h2>
+    <!-- Slideshow Container -->
+    <div id="testimonial-slide" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 1100px; margin: auto; gap: 50px;" data-aos="fade-up">
+      <!-- Image Section -->
+      <div style="flex: 0 0 200px;">
+        <img id="testimonial-img" src="Layer 42.png" alt="Client Photo"  style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 6px solid white;">
+      </div>
+      <!-- Text Section -->
+      <div style="flex: 1; max-width: 600px; text-align: left;">
+        <p id="testimonial-text" style="font-size: 16px; color: white; line-height: 1.8; margin-bottom: 25px;">
+          Asad earned my trust by partnering with me to tackle critical company challenges, improve organizational health, and drive shareholder value.
+          His real-time feedback and coaching strengthened my leadership, and his support in navigating tough conversations demonstrated his role as a
+          trusted advisor in building a mission-aligned culture.
+        </p>
+        <h4 id="testimonial-name" style="color: #f01f5d; font-size: 14px; font-weight: bold; margin: 0;">
+          MIKE DUFFY, CEO AT ONTRAC
+        </h4>
+      </div>
+    </div>
+    <!-- Left Button -->
+    <button onclick="prevTestimonial()" style="position: absolute; top: 50%; left: 30px; transform: translateY(-50%); background-color: transparent; border: none; font-size: 32px; color: white; cursor: pointer;">
+      &lt;
+    </button>
+    <!-- Right Button -->
+    <button onclick="nextTestimonial()" style="position: absolute; top: 50%; right: 30px; transform: translateY(-50%); background-color: transparent; border: none; font-size: 32px; color: white; cursor: pointer;">
+      &gt;
+    </button>
+  </section>
+</section>
+
+<script>
+  const testimonials = [
+    {
+      img: "s.jpg",
+       text: "Working with Asad was a turning point for our company. His strategic vision and leadership coaching helped us scale faster than we imagined.",
+      name: "SARAH LEE, FOUNDER AT INNOVATE INC."
+    },
+    {
+      img: "d.jpg",
+      text: "Asad’s mentorship has been invaluable. His insights helped me grow as a leader and improve company culture.",
+      name: "DAVID KIM, COO AT TECHWORLD"
+    }
+  ];
+
+  let index = 0;
+
+  function showTestimonial() {
+    document.getElementById("testimonial-img").src = testimonials[index].img;
+    document.getElementById("testimonial-text").textContent = testimonials[index].text;
+    document.getElementById("testimonial-name").textContent = testimonials[index].name;
+  }
+
+  function nextTestimonial() {
+    index = (index + 1) % testimonials.length;
+    showTestimonial();
+  }
+
+  function prevTestimonial() {
+    index = (index - 1 + testimonials.length) % testimonials.length;
+    showTestimonial();
+  }
+
+  // Auto Slideshow
+  setInterval(() => {
+    nextTestimonial();
+  }, 4000); // Change every 4 seconds
+</script>
+
+
+<!--books-->
+<section id="mybook" style="display: flex; width: 100%; min-height: 100vh; margin-top: 0px;">
+  <!-- Left Side: Pink background with book image -->
+  <div style="flex: 0.3; background-color: #f01f5d; display: flex; justify-content: center; align-items: center; padding: 60px;" >
+    <img src="Layer 39.png" alt="Careers Unleashed Book" style="position: relative; left: 125%; top: 50%; transform: translate(-50%, -50%); width: 350px; height: 500px;" data-aos="fade-right">
+  </div>
+  <!-- Right Side: White background with text -->
+  <div style="flex: 1; background-color: #ffffff; padding: 80px 100px 60px 300px; display: flex; flex-direction: column; justify-content: center; max-width: 540px;">
+    <div data-aos="fade-left">
+      <div style="padding: 20px;">
+        <h3 style="color: #f01f5d; font-size: 12px; text-transform: uppercase; font-weight: bold; margin-bottom: 15px;">
+          ASAD’S AWARD WINNING BOOK
+        </h3>
+        <p style="font-size: 42px; color: #000; margin: 0 0 2px;">
+          <b>Careers Unleashed:</b><br>Take Control of Your<br>Career and Thrive
+        </p>
+        <hr style="width: 130px; border: 2px solid #1f4c5e; margin: 20px 0;">
+        <p style="color: #f01f5d; font-size: 22px; margin-bottom: 20px;">
+          <b>Unlock Your Career Potential Today</b>
+        </p>
+        <p style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 30px;">
+          Careers Unleashed is an Amazon bestseller that has empowered<br>countless professionals to break free from career stagnation.<br>Through actionable strategies and a transformative mindset, the<br>book serves as a trusted guide for unlocking true professional<br>potential and achieving lasting success.
+        </p>
+      </div>
+      <div style="width: 100%; display: flex; justify-content: flex-start;">
+        <a href="https://www.amazon.com/Careers-Unleashed-potential-extraordinary-success-ebook/dp/B0CGXNS3XV/ref=sr_1_1?crid=1OKOK48KZMETR&dib=eyJ2IjoiMSJ9.XfSFmy0L_xW4IpY-Ql-Q09bUJAICulApG6PUV-xK8FubqKFhwsvgKvvgqtnFwSAyvG2Ah-LUpZQ8wWcUCLbB713UqQ9_5McuCFSbLrQM2mbPqoC_3eL22Bb7OymmiMcTESSe8O6HblPvsjc_AmVKyVDu4BFGGDqSv0pSTh_4L6XlaW6o8uqKIallxoFfxCDkoQkr5MS5g8T_98A0QOD9Ut-Hv4FwxENKZbGeoNFYkME.YD0o-IvJjnE-llOk8t06SsQAsHS_xyxY7kr1OTY-uhk&dib_tag=se&keywords=career+unleashed&qid=1744620002&sprefix=career+unleased%2Caps%2C366&sr=8-1">
+        <button class="btn btn-outline">BUY NOW</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--catalyst-->
+<section id="about" style="padding: 60px 20px; background-color: #1f4c5e; position: relative; z-index: 0;">
+  <div style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 80px;">
+    
+    <!-- Left -->
+    <div style="flex: 1.1; min-width: 300px;" data-aos="fade-right">
+      <p style="color: #f01f5d; font-size: 12px; margin-bottom: 10px; letter-spacing: 1px;"><b>WHO AM I</b></p>
+      <p style="font-size: 40px; margin-bottom: 20px; color: white">
+        Meet <b>Asad Husian</b> Your<br>Leadership & Career <b>Catalyst</b>
+      </p>
+      <hr style="width: 140px; height: 3px; background-color: #f01f5d; border: none; margin-left: 0;" />
+      <p style="color: white; font-size: 14px; margin-bottom: 20px; margin-top: 40px; line-height: 1.5;">
+        Asad Husain is a global leader with 30+ years of executive<br>experience across five continents, driving transformation in<br>Fortune 500s, private equity, startups, and public sector<br>organizations.
+      </p>
+      <p style="color: white; font-size: 14px; margin-bottom: 20px; line-height: 1.5;">
+        Known as the 'CEO Whisperer,' he advises CEOs and boards,<br>helping leaders navigate complexity, foster growth, and unlock<br>potential.
+      </p>
+      <p style="color: white; font-size: 14px; margin-bottom: 20px; line-height: 1.5;">
+        As a bestselling author of Careers Unleashed, his insights offer<br>professionals a clear roadmap for career success, with his thought<br>leadership featured in top business publications worldwide.
+      </p>
+    </div>
+    
+    <!-- Right -->
+    <div style="flex: 0.9; min-width: 300px; display: flex; justify-content: center;" data-aos="fade-left">
+      <img src="Layer 33.jpg" alt="Asad Husain" style="width: 100%; max-width: 430px;" />
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Form Section -->
+<section id="Contact" style="display: flex; height: 100vh;">
+  <!-- Left: Form -->
+  <div style="width: 50%; padding: 80px; display: flex; flex-direction: column; justify-content: center; margin-bottom: 20px;" data-aos="fade-right">
+    <p style="color: #ef2d56; font-size: 12px; margin-top: 1px;"><b>GET IN TOUCH</b></p>
+    <h1 style="font-size: 36px; font-weight: bold; color: black; margin-top: 2px;">Let's Connect</h1>
+    <hr style="width: 130px; border: 2px solid #1f4c5e; margin: 20px 0;margin-top: 1px; margin-bottom: 30px;">
+    <form id="signup-form" style="display: flex; flex-direction: column; gap: 20px; max-width: 400px;">
+      <input type="text" name="name" placeholder="Full Name" required
+        style="padding: 12px 15px; font-size: 14px; border: 2px solid #103b46; border-radius: 6px;"/>
+      <input type="email" name="email" placeholder="Email Address" required
+        style="padding: 12px 15px; font-size: 14px; border: 2px solid #103b46; border-radius: 6px;"/>
+      <input type="text" name="organization" placeholder="Organization"
+        style="padding: 12px 15px; font-size: 14px; border: 2px solid #103b46; border-radius: 6px;"/>
+      <select name="service" required
+        style="padding: 12px 15px; font-size: 14px; border: 2px solid #103b46; border-radius: 6px;">
+        <option value="" disabled selected>Service I'm Interested In</option>
+        <option>Executive Coaching</option>
+        <option>HR Transformation</option>
+        <option>Leadership Development</option>
+        <option>Career Development</option>
+      </select>
+      <button type="submit" class="btn btn-accent">SUBMIT</button>
+    </form>
+  </div>
+  <!-- Right: Image -->
+  <div style="width: 50%; height: 100vh;">
+    <img src="Layer 38.png" alt="Handshake"
+      style="width: 100%; max-width: 700px; height: 800px; margin-top:-10px;" />
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer style="background-color: #1f4c5e; padding: 40px 20px; color: white; text-align: center; margin-top: -60px; position: relative; z-index: 0;">
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 60px; margin-bottom: 30px;" data-aos="fade-up">
+    <div style="flex: 1; min-width: 200px;">
+      <div style="font-size: 28px; color: #f0426c; margin-bottom: 10px;">
+        <img src="mail.png"/>
+      </div>
+      <p style="margin: 0; font-size: 16px; font-weight: 500;">asad@ahusain.consulting</p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <div style="font-size: 28px; color: #f0426c; margin-bottom: 10px;">
+        <img src="phone.png"/>
+      </div>
+      <p style="margin: 0; font-size: 16px; font-weight: 500;">+1 (415) 470 1158</p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <div style="font-size: 28px; color: #f0426c; margin-bottom: 10px;">
+        <img src="wor.png"/>
+      </div>
+      <p style="margin: 0; font-size: 16px; font-weight: 500;">www.ahconsulting.com</p>
+    </div>
+  </div>
+  <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.3); margin: 20px auto; max-width: 100%;">
+  <p style="margin: 0; font-size: 14px; color: #f0426c;">
+    © COPYRIGHT AH CONSULTING | 2025
+  </p>
+</footer>
+
+<!--EmailJS Script-->
+
+<script >
+  (function () {
+    emailjs.init("_hqfE63patoXFbsK4"); 
+  })();
+
+  document.getElementById("signup-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_7kmgtqk", "template_g1fqhlp", this)
+      .then(() => {
+        alert("✅ Signup successful!");
+        this.reset();
+      }, (err) => {
+        alert("❌ Failed: " + JSON.stringify(err));
+      });
+  });
+</script>
+
+</body>
+</html>
+
+
